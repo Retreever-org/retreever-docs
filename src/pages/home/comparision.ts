@@ -1,9 +1,14 @@
+import SwaggerLogo from "/swagger.svg";
+import SpringdocLogo from "/springdoc.svg";
+import PostmanLogo from "/postman.svg";
+import RetreeverLogo from "/retreever-icon-box.svg";
+
 export const comparisonData = {
   tools: [
-    { id: "swagger", name: "Swagger UI", logo: "/swagger.svg" },
-    { id: "springdoc", name: "SpringDoc", logo: "/springdoc.svg" },
-    { id: "postman", name: "Postman", logo: "/postman.svg" },
-    { id: "retreever", name: "Retreever", logo: "/retreever-icon-box.svg" }
+    { id: "swagger", name: "Swagger UI", logo: SwaggerLogo },
+    { id: "springdoc", name: "SpringDoc", logo: SpringdocLogo },
+    { id: "postman", name: "Postman", logo: PostmanLogo },
+    { id: "retreever", name: "Retreever", logo: RetreeverLogo }
   ],
 
   features: [

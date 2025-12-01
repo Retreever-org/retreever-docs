@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, PlayCircle, Sparkles } from "lucide-react";
+import GitHubLogo from "/github.svg";
+import RetreeverIcon from "/retreever-icon-box.svg";
 
 const LOGO_BLUE = "#3B8BFF";
 
@@ -72,7 +74,7 @@ const Hero = () => {
           className="mb-6 flex items-center gap-3"
         >
           <motion.img
-            src="/retreever-icon-box.svg"
+            src={RetreeverIcon}
             alt="Retreever"
             className="h-12 w-12 rounded-2xl rotate-6"
             whileHover={{ rotate: 6, scale: 1.05 }}
@@ -134,7 +136,7 @@ const Hero = () => {
               style={{ opacity: 0.2 }}
             />
             <img
-              src="/github.svg"
+              src={GitHubLogo}
               alt="GitHub"
               className="relative z-10 h-5 w-5"
             />

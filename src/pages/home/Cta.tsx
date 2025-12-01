@@ -1,5 +1,6 @@
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import GitHubLogo from '/github.svg';
 
 const Cta: React.FC = () => {
   return (
@@ -76,7 +77,7 @@ const Cta: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <img src="/github.svg" alt="GitHub" className="h-4 w-4" />
+            <img src={GitHubLogo} alt="GitHub" className="h-4 w-4" />
             View on GitHub
           </motion.a>
         </motion.div>
