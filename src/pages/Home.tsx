@@ -16,6 +16,16 @@ const Home: React.FC = () => {
             <Compare />
             <Quickstart />
             <Footer />
+            <div className="pointer-events-none absolute inset-0 opacity-20">
+              <div
+                className="h-full w-full"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(59, 139, 255, 0.1) 1px, transparent 1px),
+                                   linear-gradient(90deg, rgba(59, 139, 255, 0.1) 1px, transparent 1px)`,
+                  backgroundSize: "64px 64px",
+                }}
+              />
+            </div>
         </div>
     )
 }

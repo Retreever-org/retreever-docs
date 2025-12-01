@@ -10,19 +10,6 @@ const Hero = () => {
     <section className="relative min-h-screen overflow-hidden bg-(--dark-3) text-white">
       {/* Animated gradient background */}
       
-
-      {/* Animated grid pattern */}
-      <div className="pointer-events-none absolute inset-0 opacity-20">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `linear-gradient(rgba(59, 139, 255, 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(59, 139, 255, 0.1) 1px, transparent 1px)`,
-            backgroundSize: "64px 64px",
-          }}
-        />
-      </div>
-
       {/* Floating orbs */}
       <motion.div
         className="pointer-events-none absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"

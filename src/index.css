@@ -30,3 +30,6 @@
   --rt-shadow-lg: 0 8px 32px 0 #00131f60;
 }
 
+a {
+  cursor: pointer !important; 
+}
