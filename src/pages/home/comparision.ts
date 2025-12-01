@@ -8,201 +8,102 @@ export const comparisonData = {
 
   features: [
     {
-      feature: "Auto-generates docs",
+      feature: "Auto-generated API docs",
       swagger: "✔ Yes",
       springdoc: "✔ Yes",
       postman: "✖ No",
       retreever: "✔ Yes"
     },
     {
-      feature: "Reflective schema generation",
-      swagger: "✔ Basic",
-      springdoc: "✔ Good",
-      postman: "✖ No",
-      retreever: "✔ Deep & accurate"
+      feature: "Always up-to-date endpoints",
+      swagger: "✔ Yes",
+      springdoc: "✔ Yes",
+      postman: "✖ Manual collections",
+      retreever: "✔ Yes"
     },
     {
-      feature: "Generic type resolution",
-      swagger: "⚠ Weak",
+      feature: "Type & schema accuracy",
+      swagger: "⚠ Basic",
       springdoc: "✔ Good",
       postman: "✖ None",
-      retreever: "✔ Strong"
+      retreever: "✔ Strong (generics, records, maps)"
     },
     {
-      feature: "Nested generics support",
+      feature: "Validation & constraint awareness",
       swagger: "⚠ Partial",
-      springdoc: "✔ Good",
-      postman: "✖ No",
-      retreever: "✔ Accurate"
+      springdoc: "✔ Partial (annotation-based)",
+      postman: "✖ Manual only",
+      retreever: "✔ Full (reflection + constraints)"
     },
     {
-      feature: "Record type support",
-      swagger: "⚠ Partial",
-      springdoc: "✔ Good",
-      postman: "✖ N/A",
-      retreever: "✔ Full"
-    },
-    {
-      feature: "Map schema resolution",
-      swagger: "⚠ Basic",
-      springdoc: "✔ Good",
-      postman: "✖ No",
-      retreever: "✔ Clean intuitive form"
-    },
-    {
-      feature: "Recursive type handling",
-      swagger: "⚠ Limited",
-      springdoc: "⚠ Limited",
-      postman: "✖ No",
-      retreever: "✔ Supported"
-    },
-    {
-      feature: "DTO example values",
-      swagger: "✖ Missing",
-      springdoc: "⚠ Partial (annotations only)",
-      postman: "⚠ Manual only",
-      retreever: "✔ Auto-generated (constraints-aware)"
-    },
-    {
-      feature: "Validation annotations included",
-      swagger: "✖ No",
-      springdoc: "✔ Partial",
-      postman: "✖ No",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Error mapping",
-      swagger: "⚠ Basic",
-      springdoc: "⚠ Good",
-      postman: "✖ Manual",
-      retreever: "✔ Strong (@ApiError + exception resolver)"
-    },
-    {
-      feature: "Derives status codes automatically",
-      swagger: "✖ No",
-      springdoc: "⚠ Partial",
-      postman: "✖ No",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Auto-docs for ControllerAdvice",
-      swagger: "✖ No",
-      springdoc: "⚠ Partial (with annotations)",
-      postman: "✖ No",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Testing panel",
-      swagger: "✖ No",
-      springdoc: "✖ No",
-      postman: "✔ Yes",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Editable request body",
-      swagger: "✔ Yes",
-      springdoc: "✔ Yes",
-      postman: "✔ Yes",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Realtime endpoint testing",
-      swagger: "✔ Yes",
-      springdoc: "✔ Yes",
-      postman: "✔ Yes",
-      retreever: "✔ Yes"
-    },
-    {
-      feature: "Docs always up-to-date",
-      swagger: "✖ No (manual annotations)",
-      springdoc: "⚠ Partial (annotations required)",
-      postman: "✖ No",
-      retreever: "✔ Always (reflection-driven)"
-    },
-    {
-      feature: "Annotation clutter",
-      swagger: "⚠ Medium",
-      springdoc: "⚠ High (OpenAPI metadata)",
-      postman: "✔ None",
-      retreever: "✔ Minimal (optional annotations only)"
-    },
-    {
-      feature: "Startup performance",
-      swagger: "⚠ Heavy",
-      springdoc: "⚠ Medium-heavy",
+      feature: "Errors",
+      swagger: "✖ Manual",
+      springdoc: "✖ Manual",
       postman: "N/A",
-      retreever: "✔ ~100ms for ~50 endpoints"
+      retreever: "✔ Auto-discovered by Type"
     },
     {
-      feature: "Latency to serve docs",
-      swagger: "⚠ 80–150ms typical",
-      springdoc: "⚠ 60–100ms",
-      postman: "✔ Fast",
-      retreever: "✔ ~30ms"
-    },
-    {
-      feature: "Output JSON size",
-      swagger: "⚠ Large",
-      springdoc: "⚠ Large",
-      postman: "✖ N/A",
-      retreever: "✔ ~45KB"
-    },
-    {
-      feature: "Modern UI",
-      swagger: "⚠ Aging",
-      springdoc: "⚠ Basic",
-      postman: "✔ Modern",
-      retreever: "✔ Modern, clean"
-    },
-    {
-      feature: "Zero YAML",
-      swagger: "✖ Requires YAML/JSON config",
-      springdoc: "⚠ Optional YAML",
-      postman: "✔ No YAML",
-      retreever: "✔ No YAML needed"
-    },
-    {
-      feature: "Developer onboarding speed",
-      swagger: "⚠ Medium",
-      springdoc: "⚠ Medium",
-      postman: "✔ Fast",
-      retreever: "✔ Instant"
-    },
-    // {
-    //   feature: "Code-first workflow",
-    //   swagger: "⚠ Mixed (annotations)",
-    //   springdoc: "⚠ Mixed (annotations)",
-    //   postman: "✖ Tool-first",
-    //   retreever: "✔ Pure code-first"
-    // },
-    // {
-    //   feature: "Auto-grouping by controller",
-    //   swagger: "✖ Manual",
-    //   springdoc: "✔ Yes",
-    //   postman: "✖ No",
-    //   retreever: "✔ Yes"
-    // },
-    {
-      feature: "Schema clarity",
-      swagger: "⚠ Verbose",
-      springdoc: "⚠ Heavy",
-      postman: "✖ Minimal",
-      retreever: "✔ Clean & predictable"
-    },
-    {
-      feature: "Customization flexibility",
-      swagger: "✔ High",
-      springdoc: "✔ High",
-      postman: "✔ UI-level",
-      retreever: "✔ High (annotations + resolvers)"
-    },
-    {
-      feature: "Docs + Testing unified",
+      feature: "Docs + testing in one place",
       swagger: "✖ Docs only",
       springdoc: "✖ Docs only",
       postman: "✔ Testing only",
       retreever: "✔ Unified"
+    },
+    {
+      feature: "Security-driven testing (auth headers etc.)",
+      swagger: "⚠ Requires config/annotations",
+      springdoc: "⚠ Requires config/annotations",
+      postman: "✔ Yes",
+      retreever: "✔ Yes"
+    },
+    {
+      feature: "Header modifications in UI",
+      swagger: "⚠ Limited",
+      springdoc: "⚠ Limited",
+      postman: "✔ Full",
+      retreever: "✔ Full"
+    },
+    {
+      feature: "Setup & configuration",
+      swagger: "⚠ Heavy annotations",
+      springdoc: "⚠ Requires OpenAPI annotations",
+      postman: "⚠ Requires collections/envs",
+      retreever: "✔ Zero config"
+    },
+    {
+      feature: "External app / network",
+      swagger: "✔ In-app",
+      springdoc: "✔ In-app",
+      postman: "✖ External app / cloud",
+      retreever: "✔ In-app"
+    },
+    {
+      feature: "Price",
+      swagger: "✔ Free",
+      springdoc: "✔ Free",
+      postman: "⚠ Free + paid",
+      retreever: "✔ Free"
+    },
+    {
+      feature: "Startup overhead",
+      swagger: "⚠ Higher",
+      springdoc: "⚠ Medium",
+      postman: "N/A",
+      retreever: "✔ Lightweight (~100ms)"
+    },
+    {
+      feature: "UI & developer experience",
+      swagger: "⚠ Outdated",
+      springdoc: "⚠ Basic",
+      postman: "✔ Polished",
+      retreever: "✔ Modern"
+    },
+    {
+      feature: "Onboarding for new devs",
+      swagger: "⚠ Needs OpenAPI knowledge",
+      springdoc: "⚠ Needs annotation knowledge",
+      postman: "✔ Easy (testing only)",
+      retreever: "✔ Open app → see everything"
     }
   ]
 };
-

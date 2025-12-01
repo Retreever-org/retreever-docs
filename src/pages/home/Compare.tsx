@@ -3,7 +3,7 @@ import { comparisonData } from "./comparision";
 
 const Compare: React.FC = () => {
   return (
-    <section className="relative py-10 px-16 bg-(--dark-3) overflow-hidden border-t border border-(--dark-border)/20">
+    <section className="relative py-10 px-16 bg-(--dark-3) overflow-hidden border-t border-(--dark-border)/20">
       {/* Subtle background linear glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 top-1/4 w-96 h-96 bg-linear-to-br from-(--rt-blue-1)/5 to-transparent rounded-full blur-3xl" />
@@ -26,7 +26,10 @@ const Compare: React.FC = () => {
           className="text-4xl md:text-5xl lg:text-6xl font-black bg-linear-to-r from-white via-blue-100 to-(--rt-blue-1) bg-clip-text text-transparent mb-6 leading-tight"
           style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
         >
-          How Retreever Compares
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-blue-400-40% to-blue-600">
+            How Retreever Compares
+          </span>
+          
         </motion.h2>
 
         <motion.p
@@ -52,22 +55,22 @@ const Compare: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="w-full min-w-[720px] border-separate border-spacing-0 bg-(--dark-2)/35 rounded-3xl shadow-2xl shadow-black/40 overflow-hidden"
+          className="w-full min-w-[720px] border-separate border-spacing-0 bg-neutral-900/20 rounded-3xl shadow-2xl shadow-black/40 overflow-hidden"
         >
           {/* Header */}
           <thead>
             <tr>
-              <th className="sticky left-0 z-20 bg-(--dark-2)/35 text-left px-8 py-6 text-slate-200 text-lg font-semibold">
+              <th className="sticky left-0 z-20 bg-neutral-900/20 text-left px-8 py-6 text-slate-200 text-lg font-semibold">
                 Feature
               </th>
 
               {comparisonData.tools.map((tool) => (
                 <th
                   key={tool.id}
-                  className="px-6 py-6 text-center bg-(--dark-2)/35 text-slate-200 text-sm font-medium"
+                  className="px-6 py-6 text-center bg-neutral-900/20 text-slate-200 text-sm font-medium"
                 >
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-7 h-7 rounded-xl bg-(--dark-2)/35 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-xl bg-neutral-900/20 flex items-center justify-center">
                       <img src={tool.logo} className="object-cover" alt={tool.name} />
                     </div>
                     <span className="tracking-tight">{tool.name}</span>
@@ -82,7 +85,7 @@ const Compare: React.FC = () => {
             {comparisonData.features.map((row) => (
               <tr
                 key={row.feature}
-                className="border-b border-(--dark-border) transition-colors duration-200 bg-(--dark-2)/35 hover:bg-(--dark-2)/35/10"
+                className="border-b border-(--dark-border) transition-colors duration-200 bg-neutral-900/20 hover:bg-neutral-900/20/10"
               >
                 {/* Sticky Feature Column */}
                 <td className="sticky left-0 z-10 px-8 py-4 font-medium text-slate-200 text-sm">
