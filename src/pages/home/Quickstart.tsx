@@ -85,7 +85,7 @@ export const Quickstart: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span>Install Retreever</span>
+          <span>Try Retreever</span>
           <motion.div
             className="w-5 h-5 shrink-0"
             initial={{ x: 0 }}
@@ -107,7 +107,7 @@ export const Quickstart: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-          Used by 500+ Spring Boot teams • Works with Spring 6.x & 7.x
+          Integrates with Spring Boot Apps • Versions 6.x & 7.x
         </motion.p>
       </div>
     </section>
