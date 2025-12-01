@@ -47,9 +47,7 @@ export default function Navbar() {
             <motion.img
               src={RetreeverLogo}
               alt="Retreever"
-              className="h-8 w-auto transition-opacity"
-              whileHover={{ rotate: [0, -5, 5, 0] }}
-              transition={{ duration: 0.5 }}
+              className="h-10 w-auto transition-opacity"
             />
           </motion.a>
 
