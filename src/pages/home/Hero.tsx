@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight, PlayCircle, Sparkles } from "lucide-react";
-import GitHubLogo from "/github.svg";
+import GitHubDarkLogo from "/github-dark.svg";
 import RetreeverIcon from "/retreever-icon-box.svg";
 
 const LOGO_BLUE = "#3B8BFF";
@@ -136,7 +136,7 @@ const Hero = () => {
               style={{ opacity: 0.2 }}
             />
             <img
-              src={GitHubLogo}
+              src={GitHubDarkLogo}
               alt="GitHub"
               className="relative z-10 h-5 w-5"
             />
