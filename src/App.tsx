@@ -7,7 +7,7 @@ import DocPage from "./pages/DocPage";
 
 export default function App() {
   return (
-      <div className="flex flex-col h-screen bg-(--dark-2) text-(--text-light)">
+      <div className="flex flex-col h-screen bg-(--dark-1) text-(--text-light)">
         <Navbar />
 
         <div className="flex flex-1 overflow-hidden">

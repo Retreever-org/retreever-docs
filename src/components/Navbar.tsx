@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-(--dark-2) border-b border-(--dark-border) backdrop-blur sticky top-0 z-50">
+    <nav className="w-full bg-(--dark-1) border-b-[0.75px] border-(--dark-border) backdrop-blur sticky top-0 z-50">
       <div className="mx-auto max-w-screen-2xl px-4 py-2 flex items-center justify-between">
 
         {/* Logo */}
@@ -69,8 +69,11 @@ export default function Navbar() {
             className="block py-2 text-(--text-light) hover:text-(--rt-blue-1) transition-colors items-center gap-2"
             onClick={() => setOpen(false)}
           >
-            <img src={GitHubLogo} className="h-5 w-5" />
-            GitHub
+            <img
+              src={GitHubLogo}
+              alt="GitHub"
+              className="h-6 w-6"
+            />
           </a>
         </div>
       )}
