@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  --rt-blue-1: #4da3ff;
+  --rt-blue-2: #0078ff;
+
+  --dark-1: #0a0a0b;
+  --dark-2: #070708;
+  --dark-3: #000000;
+
+  --dark-border: #151515;
+  --text-light: #e6edf3;
+}
