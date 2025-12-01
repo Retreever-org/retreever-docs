@@ -7,8 +7,6 @@ import {
   Shield, 
   Code, 
   Mail, 
-  Linkedin,
-  X, 
 } from "lucide-react";
 
 const Footer: React.FC = () => {
