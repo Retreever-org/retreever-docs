@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import type { DocNode } from "../../types/docfile.types";
-import { Search, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import { SidebarTree } from "./SidebarTree";
 import RetreeverIcon from "/retreever-icon-box.svg";
 import { filterDocTree } from "../../service/DocSearch";
+import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import MobileNavbar from "../../../shared/MobileNavbar";
 
 interface SidebarProps {
   tree: DocNode[];
@@ -13,6 +16,8 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false); // for small/medium screens
+  const navigate = useNavigate();
+  const [hamOpen, setHamOpen] = useState(false);
 
   const filteredTree = filterDocTree(tree, searchTerm);
 
@@ -97,13 +102,22 @@ const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
         "
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-auto items-center">
-            <img
+          <motion.a
+            href="/"
+            className="group flex items-center gap-2.5 select-none"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+          >
+            <motion.img
               src={RetreeverIcon}
-              alt="Retreever logo"
-              className="h-8 w-auto"
+              alt="Retreever"
+              className="h-8 w-auto transition-opacity"
             />
-          </div>
+          </motion.a>
 
           {/* Search bar */}
           <div
@@ -132,6 +146,15 @@ const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
               "
             />
           </div>
+          <MobileNavbar
+            activeLink="/docs"
+            isDocs={true}
+            open={hamOpen}
+            setOpen={setHamOpen}
+            handleSectionClick={() => {
+              setHamOpen(false);
+            }}
+          />
         </div>
       </div>
 
