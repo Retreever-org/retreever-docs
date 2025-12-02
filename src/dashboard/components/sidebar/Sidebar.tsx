@@ -62,8 +62,8 @@ const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
           min-w-68
           h-screen
           flex-col
-          bg-(--dark-5)
-          border-r border-(--dark-border)/50
+          bg-(--db-side)
+          border-r border-(--dark-border)
           text-(--rt-fg-light)
           sticky top-0 overflow-auto
         `}
