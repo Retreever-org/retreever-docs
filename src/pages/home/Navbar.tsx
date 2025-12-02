@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <motion.nav
       className="fixed top-0 z-50 w-full transition-all duration-300"
-      initial={{ y: -100 }}
+      initial={window.location.pathname == "/" ? { y: -100 } : { y: 0}}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
