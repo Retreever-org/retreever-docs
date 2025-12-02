@@ -21,9 +21,7 @@ export default function DesktopNavbar({
 
   return (
     <motion.nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isDocs ? "border-b border-transparent bg-transparent" : "border-b border-transparent bg-transparent"
-      }`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 border-b border-transparent bg-transparent`}
       initial={window.location.pathname === "/" ? { y: -100 } : { y: 0 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
