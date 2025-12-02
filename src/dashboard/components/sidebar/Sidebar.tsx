@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import type { DocNode } from "../../types/docfile.types";
-import { Menu, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { SidebarTree } from "./SidebarTree";
 import RetreeverIcon from "/retreever-icon-box.svg";
 import { filterDocTree } from "../../service/DocSearch";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import MobileNavbar from "../../../shared/MobileNavbar";
 
