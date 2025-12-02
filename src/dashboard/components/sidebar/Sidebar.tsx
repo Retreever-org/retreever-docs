@@ -4,7 +4,7 @@ import { Search, X } from "lucide-react";
 import { SidebarTree } from "./SidebarTree";
 import RetreeverIcon from "/retreever-icon-box.svg";
 import { filterDocTree } from "../../service/DocSearch";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import MobileNavbar from "../../../shared/MobileNavbar";
 
@@ -82,10 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
 
         {/* Tree */}
         <div className="flex-1 overflow-auto px-6 py-2 text-sm">
-          <SidebarTree
-            tree={filteredTree}
-            highlight={searchTerm}
-          />
+          <SidebarTree tree={filteredTree} highlight={searchTerm} />
         </div>
       </aside>
 
@@ -144,15 +141,17 @@ const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
               "
             />
           </div>
-          <MobileNavbar
-            activeLink="/docs"
-            isDocs={true}
-            open={hamOpen}
-            setOpen={setHamOpen}
-            handleSectionClick={() => {
-              setHamOpen(false);
-            }}
-          />
+          {!isOpen && (
+            <MobileNavbar
+              activeLink="/docs"
+              isDocs={true}
+              open={hamOpen}
+              setOpen={setHamOpen}
+              handleSectionClick={() => {
+                setHamOpen(false);
+              }}
+            />
+          )}
         </div>
       </div>
 
@@ -195,24 +194,32 @@ const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
                 "
               />
             </div>
-            <button
+            <motion.button
+              className="z-50 flex h-10 w-10 rounded-lg border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               onClick={handleClose}
-              className="
-                ml-2 p-2 rounded-full
-                text-(--rt-fg-muted)
-              "
-              aria-label="Close docs navigation"
+              aria-label="Toggle navigation"
+              whileTap={{ scale: 0.95 }}
             >
-              <X className="w-4 h-4" />
-            </button>
+              <AnimatePresence mode="wait">
+                {isOpen && (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex h-full w-full items-center justify-center"
+                  >
+                    <X size={20} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
           </div>
 
           {/* Full-screen tree (filtered) */}
           <div className="flex-1 overflow-auto px-4 pb-4 text-sm">
-            <SidebarTree
-              tree={filteredTree}
-              highlight={searchTerm}
-            />
+            <SidebarTree tree={filteredTree} highlight={searchTerm} />
           </div>
         </div>
       )}
