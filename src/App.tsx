@@ -4,7 +4,7 @@ import Dashboard from "./dashboard/pages/Dashboard";
 
 export default function App() {
   return (
-      <div className="flex flex-col h-screen bg-(--dark-1) text-(--text-light)">
+      <div className="flex flex-col h-screen">
         <div className="flex flex-1 overflow-hidden">
           <main className="flex-1 overflow-auto">
             <Routes>

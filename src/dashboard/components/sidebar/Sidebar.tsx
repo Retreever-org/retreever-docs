@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
         w-72
         h-screen
         flex flex-col
-        bg-(--dark-1)
+        bg-(--dark-5)
         border-r border-(--dark-border)
         text-(--rt-fg-light)
       "
