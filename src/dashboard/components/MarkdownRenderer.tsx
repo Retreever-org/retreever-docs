@@ -16,25 +16,25 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     // Headings - Dark mode
     h1: ({ node, ...props }) => (
       <h1
-        className="text-4xl font-semibold mt-8 mb-4 pb-2 text-gray-100"
+        className="text-4xl font-semibold mt-8 mb-4 pb-2 text-slate-200"
         {...props}
       />
     ),
     h2: ({ node, ...props }) => (
       <h2
-        className="text-3xl font-semibold mt-7 mb-4 pb-2 text-gray-100"
+        className="text-3xl font-semibold mt-7 mb-4 pb-2 text-slate-200"
         {...props}
       />
     ),
     h3: ({ node, ...props }) => (
       <h3
-        className="text-2xl font-semibold mt-6 mb-4 text-gray-100"
+        className="text-2xl font-semibold mt-6 mb-4 text-slate-200"
         {...props}
       />
     ),
     h4: ({ node, ...props }) => (
       <h4
-        className="text-lg font-semibold mt-5 mb-3 text-gray-100"
+        className="text-lg font-semibold mt-5 mb-3 text-slate-200"
         {...props}
       />
     ),
@@ -43,7 +43,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
     // Paragraphs - Dark mode
     p: ({ node, ...props }) => (
-      <p className="mb-4 leading-7 text-gray-200" {...props} />
+      <p className="mb-4 leading-7 text-slate-300" {...props} />
     ),
 
     // Links - Dark mode
@@ -56,22 +56,22 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
     // Lists - Dark mode
     ul: ({ node, ...props }) => (
-      <ul className="mb-4 ml-6 space-y-2 list-disc text-gray-200" {...props} />
+      <ul className="mb-4 ml-6 space-y-2 list-disc text-slate-200" {...props} />
     ),
     ol: ({ node, ...props }) => (
       <ol
-        className="mb-4 ml-6 space-y-2 list-decimal text-gray-200"
+        className="mb-4 ml-6 space-y-2 list-decimal text-slate-200"
         {...props}
       />
     ),
     li: ({ node, ...props }) => (
-      <li className="leading-7 text-gray-200" {...props} />
+      <li className="leading-7 text-slate-200" {...props} />
     ),
 
     // Blockquotes - Dark mode
     blockquote: ({ node, ...props }) => (
       <blockquote
-        className="my-4 pl-4 border-l-4 border-blue-500 bg-gray-800/50 py-2 pr-4 italic text-gray-300"
+        className="my-4 pl-4 border-l-4 border-blue-500 bg-slate-800/50 py-2 pr-4 italic text-slate-300"
         {...props}
       />
     ),
@@ -95,26 +95,26 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     ),
     th: ({ node, ...props }) => (
       <th
-        className="px-4 py-2 text-left font-semibold border border-(--dark-border) text-gray-100 bg-black/20"
+        className="px-4 py-2 text-left font-semibold border border-(--dark-border) text-slate-100 bg-black/20"
         {...props}
       />
     ),
     td: ({ node, ...props }) => (
       <td
-        className="px-4 py-2 border border-(--dark-border) text-gray-200"
+        className="px-4 py-2 border border-(--dark-border) text-slate-200"
         {...props}
       />
     ),
 
     // Text formatting - Dark mode
     strong: ({ node, ...props }) => (
-      <strong className="font-bold text-white" {...props} />
+      <strong className="font-bold text-slate-300" {...props} />
     ),
     em: ({ node, ...props }) => (
-      <em className="italic text-gray-200" {...props} />
+      <em className="italic text-slate-200" {...props} />
     ),
     del: ({ node, ...props }) => (
-      <del className="line-through text-gray-500" {...props} />
+      <del className="line-through text-slate-500" {...props} />
     ),
 
     // Code - Enhanced dark mode
@@ -130,7 +130,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
       if (!isMultiline) {
         return (
           <code
-            className={`${base} px-1.5 py-0.5 rounded bg-gray-800/70 text-teal-300/80`}
+            className={`${base} px-1.5 py-0.5 rounded bg-slate-100/10 text-zinc-300/80`}
             {...props}
           >
             {children}
@@ -140,9 +140,9 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
       // Code block - Dark mode
       return (
-        <pre className="my-4 rounded-lg bg-(--dark-3)/70 p-4 overflow-auto border border-(--dark-border)">
+        <pre className="my-4 rounded-lg bg-(--dark-3)/50 p-4 overflow-auto border border-(--dark-border)">
           <code
-            className={`${base} text-gray-100 ${
+            className={`${base} text-slate-100 ${
               language ? `language-${language}` : ""
             }`}
             {...props}
