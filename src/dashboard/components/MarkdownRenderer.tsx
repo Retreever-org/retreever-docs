@@ -11,19 +11,18 @@ export interface MarkdownRendererProps {
 
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
   markdown,
-  className,
 }) => {
   const components: Components = {
     // Headings - Dark mode
     h1: ({ node, ...props }) => (
       <h1
-        className="text-4xl font-semibold mt-8 mb-4 pb-2 text-white"
+        className="text-4xl font-semibold mt-8 mb-4 pb-2 text-gray-100"
         {...props}
       />
     ),
     h2: ({ node, ...props }) => (
       <h2
-        className="text-3xl font-semibold mt-7 mb-4 pb-2 text-white"
+        className="text-3xl font-semibold mt-7 mb-4 pb-2 text-gray-100"
         {...props}
       />
     ),

@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
   const docsTree = resolveDocs();
 
   return (
-    <div className="bg-(--dark-2)">
+    <div className="bg-(--db-display) text-gray-400">
       <div className="hidden lg:flex h-full">
         {/* default navbar shown only on large screens */}
         <Navbar />
