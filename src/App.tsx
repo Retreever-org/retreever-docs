@@ -9,7 +9,7 @@ export default function App() {
           <main className="flex-1 overflow-auto">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/docs/:slug?" element={<Dashboard />} />
+              <Route path="/docs/*" element={<Dashboard />} />
             </Routes>
           </main>
         </div>

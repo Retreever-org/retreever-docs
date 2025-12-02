@@ -10,10 +10,9 @@ import MobileNavbar from "../../../shared/MobileNavbar";
 
 interface SidebarProps {
   tree: DocNode[];
-  activeFile?: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
+const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false); // for small/medium screens
   const navigate = useNavigate();
@@ -85,7 +84,6 @@ const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
         <div className="flex-1 overflow-auto px-6 py-2 text-sm">
           <SidebarTree
             tree={filteredTree}
-            activeFile={activeFile}
             highlight={searchTerm}
           />
         </div>
@@ -213,7 +211,6 @@ const Sidebar: React.FC<SidebarProps> = ({ tree, activeFile }) => {
           <div className="flex-1 overflow-auto px-4 pb-4 text-sm">
             <SidebarTree
               tree={filteredTree}
-              activeFile={activeFile}
               highlight={searchTerm}
             />
           </div>

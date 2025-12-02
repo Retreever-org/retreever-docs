@@ -4,15 +4,15 @@ import { ChevronRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { DocNode } from "../../types/docfile.types";
 import { highlightText } from "../../service/DocSearch";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface FolderNodeProps {
   node: Extract<DocNode, { type: "folder" }>;
   depth: number;
-  activeFile?: string;
   highlight?: string;
 }
 
-export const FolderNode = ({ node, depth, activeFile, highlight }: FolderNodeProps) => {
+export const FolderNode = ({ node, depth, highlight }: FolderNodeProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -54,7 +54,6 @@ export const FolderNode = ({ node, depth, activeFile, highlight }: FolderNodePro
                   key={child.name + i}
                   node={child}
                   depth={depth + 1}
-                  activeFile={activeFile}
                   highlight={highlight}
                 />
               ) : (
@@ -62,7 +61,6 @@ export const FolderNode = ({ node, depth, activeFile, highlight }: FolderNodePro
                   key={child.name + i}
                   node={child as Extract<DocNode, { type: "file" }>}
                   depth={depth + 1}
-                  active={activeFile === child.name}
                   highlight={highlight}
                 />
               )
@@ -77,11 +75,15 @@ export const FolderNode = ({ node, depth, activeFile, highlight }: FolderNodePro
 interface FileNodeProps {
   node: Extract<DocNode, { type: "file" }>;
   depth: number;
-  active?: boolean;
   highlight?: string;
 }
 
-export const FileNode = ({ node, depth, active, highlight }: FileNodeProps) => {
+export const FileNode = ({ node, depth, highlight }: FileNodeProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname.replace(/^\/docs\//, "");
+  const isActive = currentPath === node.path;
+
   return (
     <div
       className={`
@@ -92,12 +94,13 @@ export const FileNode = ({ node, depth, active, highlight }: FileNodeProps) => {
         text-sm
         truncate
         ${depth > 0 ? "pl-8" : "pl-3"}
-        ${active ? "text-(--rt-blue-1)" : "text-(--rt-fg-muted)"}
+        ${isActive ? "text-(--rt-blue-1) font-semibold" : "text-(--rt-fg-muted)"}
         transition-colors
-        hover:text-(--rt-fg-subtle)
+        ${isActive ? "" : "hover:text-(--rt-fg-subtle)"}
         font-normal
       `}
       title={node.name}
+      onClick={() => navigate(`/docs/${node.path}`)}
     >
       {highlightText(node.name, highlight)}
     </div>

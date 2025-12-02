@@ -4,11 +4,10 @@ import { highlightText } from "../../service/DocSearch";
 
 interface CategorySectionProps {
   node: Extract<DocNode, { type: "folder" }>;
-  activeFile?: string;
   highlight?: string;
 }
 
-export const CategorySection = ({ node, activeFile, highlight }: CategorySectionProps) => {
+export const CategorySection = ({ node, highlight }: CategorySectionProps) => {
   const children = node.children;
 
   const files = children.filter(
@@ -36,7 +35,6 @@ export const CategorySection = ({ node, activeFile, highlight }: CategorySection
             key={intro.name}
             node={intro}
             depth={0}
-            active={activeFile === intro.name}
             highlight={highlight}
           />
         )}
@@ -45,7 +43,6 @@ export const CategorySection = ({ node, activeFile, highlight }: CategorySection
             key={gettingStarted.name}
             node={gettingStarted}
             depth={0}
-            active={activeFile === gettingStarted.name}
             highlight={highlight}
           />
         )}
@@ -54,7 +51,6 @@ export const CategorySection = ({ node, activeFile, highlight }: CategorySection
             key={file.name}
             node={file}
             depth={0}
-            active={activeFile === file.name}
             highlight={highlight}
           />
         ))}
@@ -64,7 +60,6 @@ export const CategorySection = ({ node, activeFile, highlight }: CategorySection
             key={folder.name + i}
             node={folder}
             depth={0}
-            activeFile={activeFile}
             highlight={highlight}
           />
         ))}
