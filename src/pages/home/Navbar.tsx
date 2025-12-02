@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode, type MouseEvent } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import RetreeverLogo from "/retreever-plain-light-logo.svg";
+import RetreeverLogo from "/Retreever-logo-dark.svg";
 import GitHubLogo from "/github.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             <motion.img
               src={RetreeverLogo}
               alt="Retreever"
-              className="h-10 w-auto transition-opacity"
+              className="h-8 w-auto transition-opacity"
             />
           </motion.a>
 

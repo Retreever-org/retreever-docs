@@ -12,7 +12,10 @@ const Dashboard: React.FC = () => {
   }, [docsTree]);
   return (
     <div className="bg-(--dark-5)">
-      <Navbar/>
+      <div className="hidden lg:flex h-full">
+        {/* default navbar shown only on large screens */}
+        <Navbar />  
+      </div>
       <Sidebar tree={docsTree} />
       <Footer/>
     </div>
