@@ -1,0 +1,44 @@
+[
+  {
+    "type": "folder",
+    "name": "Spring Boot",
+    "children": [
+      {
+        "type": "folder",
+        "name": "Architecture",
+        "children": [
+          {
+            "type": "file",
+            "name": "Schema Resolution",
+            "title": "Schema Resolution",
+            "path": "spring-boot/architecture/schema-resolution"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Tutorials",
+        "children": [
+          {
+            "type": "file",
+            "name": "Setup",
+            "title": "Setup",
+            "path": "spring-boot/tutorials/setup"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "file",
+    "name": "Getting Started",
+    "title": "Getting Started",
+    "path": "getting-started"
+  },
+  {
+    "type": "file",
+    "name": "Introduction",
+    "title": "Introduction",
+    "path": "introduction"
+  }
+]

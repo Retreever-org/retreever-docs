@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { getMarkdown } from "../dashboard/service/DocSearch";
-import { markdownFiles } from "../dashboard/service/DocsResolver";
 
 export interface ViewingDoc {
   markdown: string | null;
@@ -9,7 +8,7 @@ export interface ViewingDoc {
 
 interface DocsState {
   current: ViewingDoc;
-  setCurrent: (path: string) => void;
+  setCurrent: (path: string) => Promise<void>; // async now
 }
 
 export const useDocsStore = create<DocsState>((set) => ({
@@ -17,8 +16,8 @@ export const useDocsStore = create<DocsState>((set) => ({
     markdown: null,
     path: null,
   },
-  setCurrent: (path: string) => {
-    const markdown = getMarkdown(path, markdownFiles) || null;
+  setCurrent: async (path: string) => {
+    const markdown = await getMarkdown(path);
     set({
       current: {
         markdown,
