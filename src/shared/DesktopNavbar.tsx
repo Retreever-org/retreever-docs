@@ -22,14 +22,16 @@ export default function DesktopNavbar({
   return (
     <motion.nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 border-b ${
-        isDocs ? "border-border-subtle bg-navbar" : "border-transparent bg-transparent"
+        isDocs
+          ? "border-border-subtle bg-navbar"
+          : "border-transparent bg-transparent"
       }`}
       initial={window.location.pathname === "/" ? { y: -100 } : { y: 0 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className={`transition-all duration-300`}>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-0">
           {/* Logo */}
           <motion.a
             href="/"
@@ -49,13 +51,14 @@ export default function DesktopNavbar({
           </motion.a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8 py-2.5">
+          <div className="hidden md:flex items-center gap-6 py-2.5">
             {!isDocs && (
               <div className="flex items-center gap-1">
                 <NavLink
                   href="#home"
                   active={activeLink === "#home" || activeLink === "/"}
                   onClick={() => handleSectionClick("#home")}
+                  isDocs={false}
                 >
                   Home
                 </NavLink>
@@ -63,13 +66,36 @@ export default function DesktopNavbar({
                   href="#features"
                   active={activeLink === "#features"}
                   onClick={() => handleSectionClick("#features")}
+                  isDocs={false}
                 >
                   Features
                 </NavLink>
                 <NavLink
                   href="/docs"
                   active={isDocs}
-                  onClick={() => handleSectionClick("/docs")}
+                  onClick={() => navigate("/docs")}
+                  isDocs={false}
+                >
+                  Docs
+                </NavLink>
+              </div>
+            )}
+
+            {isDocs && (
+              <div className="flex items-center gap-1">
+                <NavLink
+                  href="/"
+                  active={!isDocs}
+                  onClick={() => navigate("/")}
+                  isDocs={true}
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  href="/docs"
+                  active={isDocs}
+                  onClick={() => navigate("/docs")}
+                  isDocs={true}
                 >
                   Docs
                 </NavLink>
@@ -108,9 +134,10 @@ interface NavLinkProps {
   active: boolean;
   onClick: (event: MouseEvent<HTMLAnchorElement>) => void;
   children: React.ReactNode;
+  isDocs?: boolean;
 }
 
-function NavLink({ href, active, onClick, children }: NavLinkProps) {
+function NavLink({ href, active, onClick, children, isDocs }: NavLinkProps) {
   return (
     <motion.a
       href={href}
@@ -124,7 +151,7 @@ function NavLink({ href, active, onClick, children }: NavLinkProps) {
     >
       <span
         className={`relative z-10 transition-colors ${
-          active ? "text-white" : "text-slate-400 hover:text-white"
+          active ? "text-text-primary" : "text-slate-400 hover:text-text-primary"
         }`}
       >
         {children}
@@ -132,7 +159,7 @@ function NavLink({ href, active, onClick, children }: NavLinkProps) {
       {active && (
         <motion.div
           layoutId="activeNav"
-          className="absolute inset-0 rounded-lg bg-white/10 backdrop-blur-sm"
+          className={`${!isDocs && "absolute inset-0 rounded-lg bg-white/10 backdrop-blur-sm"}`}
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
         />
       )}

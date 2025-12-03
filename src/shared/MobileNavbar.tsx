@@ -142,7 +142,7 @@ export default function MobileNavbar({
                 href="https://github.com/Retreever-org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 flex items-center gap-2.5 rounded-lg border border-blue-500/20 bg-blue-500/5 px-4 py-3 text-sm font-medium text-blue-200"
+                className="mt-5 flex items-center gap-2.5 rounded-lg border border-blue-500/20 bg-blue-500/5 px-4 py-3 text-md font-medium text-blue-200"
                 onClick={() => setOpen(false)}
                 whileTap={{ scale: 0.98 }}
               >
@@ -180,7 +180,7 @@ function MobileNavLink({
         event.preventDefault();
         onClick(event);
       }}
-      className={`block rounded-lg px-4 py-3 text-sm font-medium transition-all ${
+      className={`block rounded-lg px-4 py-3 font-medium transition-all text-md ${
         active
           ? "bg-blue-500/5 backdrop-blur-2xl text-white"
           : "text-slate-300 hover:bg-white/5 hover:text-white"

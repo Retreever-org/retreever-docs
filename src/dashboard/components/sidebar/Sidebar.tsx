@@ -64,6 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ tree }) => {
           flex-col
           sticky top-0 overflow-auto
           border-r border-border-subtle
+          bg-sidebar
         `}
         ref={sidebarRef}
       >
