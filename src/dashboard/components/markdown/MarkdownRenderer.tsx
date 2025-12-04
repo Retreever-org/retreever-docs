@@ -49,8 +49,6 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     h2: ({ node, ...props }) => {
       const text = getNodeText(props.children);
       const id = slugify(text);
-      console.log("Generated slug text: ", text);
-      console.log("Generated slug id: ", id);
       return (
         <h2
           id={id}
